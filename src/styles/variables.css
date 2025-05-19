@@ -4,6 +4,9 @@
   --color-dark:    #0F1940;
   --color-accent:  #00D7FF;
   --color-light:   #E1EFFF;
+  --color-white:   #FFFFFF;
+    --color-black:   #000000;
+    --color-gray:    #808080;
 
   /* Tipografías */
   --font-heading: 'BDO Grostesk', sans-serif;
