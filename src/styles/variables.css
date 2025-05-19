@@ -1,0 +1,19 @@
+:root {
+  /* Colores */
+  --color-primary: #2175D9;
+  --color-dark:    #0F1940;
+  --color-accent:  #00D7FF;
+  --color-light:   #E1EFFF;
+
+  /* Tipografías */
+  --font-heading: 'BDO Grostesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+/* Monta las fuentes (puedes subir los .woff al assets o usar Google Fonts si están disponibles) */
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  background: var(--color-light);
+  color: var(--color-dark);
+}
