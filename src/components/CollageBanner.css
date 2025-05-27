@@ -1,0 +1,52 @@
+.collage-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  background: var(--color-dark);
+  flex-wrap: wrap;
+}
+
+.collage-block__image-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.collage-block__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.collage-block__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.collage-block__logo {
+  max-width: 240px;
+}
+
+.collage-block__slogan {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.collage-block__slogan .highlight {
+  color: var(--color-primary);
+}
+
+.collage-block__subtext {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-gray);
+}

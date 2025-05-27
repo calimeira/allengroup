@@ -1,16 +1,15 @@
 .services {
   padding: 4rem 1rem;
-  background: var(--color-light);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .service-card {
-  background: white;
+
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +36,7 @@
 
 .services-section {
   padding: 4rem 1rem;
-  background: var(--color-light);
+ 
 }
 
 .services-header {
@@ -47,14 +46,14 @@
 
 .services-title {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-dark);
   margin-bottom: 0.5rem;
 }
 
 .services-underline {
-  width: 60px;
-  height: 4px;
+  width: 30px;
+  height: 2px;
   background: var(--color-primary);
   margin: 0 auto;
   border-radius: 2px;

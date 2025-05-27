@@ -20,7 +20,7 @@ export default function Services() {
       <div className="services">
         {servicesData.map(({ icon: Icon, title, desc }) => (
           <div key={title} className="service-card">
-            <Icon size={48} className="service-card__icon" />
+            <Icon size={36} className="service-card__icon" />
             <h3 className="service-card__title">{title}</h3>
             <p className="service-card__desc">{desc}</p>
           </div>

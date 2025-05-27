@@ -1,33 +1,42 @@
 import React from 'react';
 import './Respaldo.css';
-import logo1 from '../assets/image.png';
+import brand1 from '../assets/allianz.png';
+import brand2 from '../assets/asociart.png';
+import brand3 from '../assets/berkley.png';
+import brand4 from '../assets/chubb.png';
+import brand5 from '../assets/galeno-art.png';
+import brand6 from '../assets/colon.png';
+import brand7 from '../assets/experta-art.png';
+import brand8 from '../assets/federacionpatronal.png';
+import brand9 from '../assets/galeno-seguros.png';
+import brand10 from '../assets/experta-seguros.png';
 
+const brands = [
+  { src: brand1, alt: 'Allianz' },
+  { src: brand2, alt: 'Asociart' },
+  { src: brand3, alt: 'Berkley' },
+  { src: brand4, alt: 'Chubb' },
+  { src: brand5, alt: 'Galeno ART' },
+  { src: brand6, alt: 'Colon' },
+  { src: brand7, alt: 'Experta ART' },
+  { src: brand8, alt: 'Federación Patronal' },
+  { src: brand9, alt: 'Galeno Segurosguradora 9' },
+  { src: brand10, alt: 'Experta Seguros' },
+];
 
 export default function Respaldo() {
   return (
     <section className="respaldo">
-      <h2 className="respaldo__title">Respaldo</h2>
-      <p className="respaldo__desc">
-        Consolidamos alianzas estratégicas con las compañías aseguradoras nacionales e internacionales líderes,
-        que nos permiten ofrecer las condiciones de mercado más competitivas.
-      </p>
       <div className="respaldo__slider">
-        <img src={logo1} alt="Aseguradora 1" />
-        <img src={logo1} alt="Aseguradora 2" />
-        <img src={logo1} alt="Aseguradora 3" />
-        <img src={logo1} alt="Aseguradora 4" />
-        <img src={logo1} alt="Aseguradora 5" />
-                <img src={logo1} alt="Aseguradora 1" />
-        <img src={logo1} alt="Aseguradora 2" />
-        <img src={logo1} alt="Aseguradora 3" />
-        <img src={logo1} alt="Aseguradora 4" />
-        <img src={logo1} alt="Aseguradora 5" />
-                <img src={logo1} alt="Aseguradora 1" />
-        <img src={logo1} alt="Aseguradora 2" />
-        <img src={logo1} alt="Aseguradora 3" />
-        <img src={logo1} alt="Aseguradora 4" />
-        <img src={logo1} alt="Aseguradora 5" />
+        <div className="respaldo__slider-track">
+          {brands.concat(brands).map((brand, index) => (
+            <img key={index} src={brand.src} alt={brand.alt} />
+          ))}
+        </div>
       </div>
+   
+
     </section>
+    
   );
 }

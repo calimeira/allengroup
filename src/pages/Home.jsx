@@ -4,15 +4,25 @@ import Services from '../components/Services';
 import CategoryServices from '../components/CategoryServices';
 import Respaldo from '../components/Respaldo';
 import Footer from '../components/Footer';
+import Banner from '../components/Banner';
+import CollageBanner from '../components/CollageBanner';
+import Separator from '../components/Separator';
 
 export default function Home() {
   return (
     <div>
       <Hero />
-        <Services />
+      <Separator />
+              <Respaldo />
+      <Separator />
+              <Services />
+        <CollageBanner />
+                    <Banner />
+        
+  
         <CategoryServices category="empresas" />
         <CategoryServices category="individuos" />
-        <Respaldo />
+
         <Footer />
       {/* Aquí puedes añadir más secciones: Features, Testimonials, Footer, etc. */}
     </div>

@@ -44,7 +44,7 @@
 .subheader {
   background: var(--color-primary); /* azul marino */
   color: white;
-  padding: 0.7rem;
+  padding: 0.1rem;
   text-align: center;
 }
 

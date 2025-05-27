@@ -10,7 +10,7 @@
 .hero__banner {
   background: var(--color-dark);
   width: 100%;
-  padding: 7rem 2rem;
+  padding: 7rem 0rem;
   font-size: 1.75rem;
   line-height: 1.8;
   color: white;

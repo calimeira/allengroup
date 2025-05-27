@@ -4,19 +4,44 @@
   --color-dark:    #0F1940;
   --color-accent:  #00D7FF;
   --color-light:   #E1EFFF;
+  --color-background: #f0f0f0;
   --color-white:   #FFFFFF;
     --color-black:   #000000;
     --color-gray:    #808080;
 
   /* Tipografías */
-  --font-heading: 'BDO Grostesk', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-heading: 'BDO Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
+@font-face {
+  font-family: 'BDO Grotesk';
+  src: url('./assets/fonts/bdo-grotesk/BDOGrotesk-Regular-BF648a656fd543a.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BDO Grotesk';
+  src: url('./assets/fonts/bdo-grotesk/BDOGrotesk-Bold-BF648a656f8559f.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Agregá más pesos si los necesitás */
 
 /* Monta las fuentes (puedes subir los .woff al assets o usar Google Fonts si están disponibles) */
 body {
   font-family: var(--font-body);
   margin: 0;
-  background: var(--color-light);
+  background: var(--color-background);
   color: var(--color-dark);
+}
+h1, h2, h3, .respaldo__title {
+  font-family: var(--font-heading);
+}
+.section-divider {
+  width: 100%;
+  height: 2px; /* Podés ajustar el grosor */
+  background-color: var(--color-dark);
+
 }
