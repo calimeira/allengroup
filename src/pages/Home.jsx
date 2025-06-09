@@ -7,6 +7,8 @@ import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import CollageBanner from '../components/CollageBanner';
 import Separator from '../components/Separator';
+import WhatsappChat from '../components/WhatsappChat';
+import DecorativeSection from '../components/decorativo';
 
 export default function Home() {
   return (
@@ -16,12 +18,14 @@ export default function Home() {
               <Respaldo />
       <Separator />
               <Services />
+      <DecorativeSection/>
+                      <CategoryServices category="empresas" />
+        <CategoryServices category="individuos" />
         <CollageBanner />
                     <Banner />
-        
+        <WhatsappChat />
   
-        <CategoryServices category="empresas" />
-        <CategoryServices category="individuos" />
+
 
         <Footer />
       {/* Aquí puedes añadir más secciones: Features, Testimonials, Footer, etc. */}

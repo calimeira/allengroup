@@ -1,0 +1,162 @@
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-button {
+  background: #25D366;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.whatsapp-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: red;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-chat {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 320px;
+  height: 420px;
+background: url('../assets/fondo-whatsapp.jpg');
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.chat-header {
+  background: #fff;
+  padding: 0.75rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header__info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  object-fit: cover;
+}
+
+.chat-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #111;
+}
+
+.chat-body {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-message {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0 10px 10px 10px;
+  max-width: 80%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+.attach-icon {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background: #f0f0f0;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.send-btn {
+  background: none;
+  border: none;
+  margin-left: 0.5rem;
+  color: #25D366;
+  cursor: pointer;
+}

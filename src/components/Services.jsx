@@ -1,6 +1,15 @@
-import React from 'react';
-import { Activity, FileText, Briefcase, Gavel, ShieldOff } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
+import {
+  Activity,
+  FileText,
+  Briefcase,
+  Gavel,
+  ShieldOff,
+} from 'lucide-react';
 import './Services.css';
+import servicesImg from '../assets/services.png'; // reemplaza por tu imagen real
+import decorativoSVG from '../assets/Layer_2.svg';
+
 
 const servicesData = [
   { icon: Activity, title: 'SCOUTING PERMANENTE', desc: 'Analizamos en forma continua diferentes alternativas en cuanto a prestaciones, alcances de cobertura, mejoras de servicios y costos entre las aseguradoras de primer nivel con las que trabajamos, con el objetivo de brindarle la mejor solución.' },
@@ -11,20 +20,63 @@ const servicesData = [
 ];
 
 export default function Services() {
+  const sectionRef = useRef(null);
+  const [showBounce, setShowBounce] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowBounce(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="services-section">
-      <div className="services-header">
-        <h2 className="services-title">Nuestros Servicios</h2>
-        <div className="services-underline"></div>
+    <section
+      className="services-section"
+      style={{ position: 'relative' }}
+      ref={sectionRef}
+    >
+      {/* SVG decorativo arriba a la derecha */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 150,
+          zIndex: 2,
+          padding: '1rem'
+        }}
+      >
+        <img
+          src={decorativoSVG}
+          alt="Decorativo"
+          className={showBounce ? 'svg-bounce' : ''}
+          style={{ width: 248, height: 248 }}
+        />
       </div>
-      <div className="services">
-        {servicesData.map(({ icon: Icon, title, desc }) => (
-          <div key={title} className="service-card">
-            <Icon size={36} className="service-card__icon" />
-            <h3 className="service-card__title">{title}</h3>
-            <p className="service-card__desc">{desc}</p>
-          </div>
-        ))}
+      <div className="services-container">
+        <div className="services-list">
+          <h2 className="services-title">Nuestros Servicios</h2>
+          <div className="services-underline"></div>
+          {servicesData.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="service-item">
+              <div className="service-item__header">
+                <Icon size={20} className="service-item__icon" />
+                <h3 className="service-item__title">{title}</h3>
+              </div>
+              <p className="service-item__desc">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="services-image">
+          <img src={servicesImg} alt="Servicios AllenGroup" />
+        </div>
       </div>
     </section>
   );

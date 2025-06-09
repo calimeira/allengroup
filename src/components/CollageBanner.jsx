@@ -1,7 +1,7 @@
 import React from 'react';
 import './CollageBanner.css';
 import logo from '../assets/logo-dark.png';
-import collage from '../assets/people.png';
+import collage from '../assets/people2.png';
 
 export default function CollageBlock() {
   return (

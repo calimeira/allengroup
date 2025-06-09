@@ -1,17 +1,32 @@
-
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
   background: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .header__logo img {
   height: 100px;
   margin-right: 2rem;
+  transition: height 0.3s ease;
 }
+
+.header--scrolled {
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.header--scrolled .header__logo img {
+  height: 60px;
+}
+
 
 .header__nav {
   display: flex;
@@ -42,10 +57,17 @@
   width: 100%;
 }
 .subheader {
-  background: var(--color-primary); /* azul marino */
+  background: var(--color-primary);
   color: white;
   padding: 0.1rem;
   text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.subheader.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .subheader__options {
