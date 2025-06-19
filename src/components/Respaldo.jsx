@@ -17,26 +17,25 @@ const brands = [
   { src: brand3, alt: 'Berkley' },
   { src: brand4, alt: 'Chubb' },
   { src: brand5, alt: 'Galeno ART' },
-  { src: brand6, alt: 'Colon' },
+  { src: brand6, alt: 'Colón' },
   { src: brand7, alt: 'Experta ART' },
   { src: brand8, alt: 'Federación Patronal' },
-  { src: brand9, alt: 'Galeno Segurosguradora 9' },
+  { src: brand9, alt: 'Galeno Seguros' },
   { src: brand10, alt: 'Experta Seguros' },
 ];
 
 export default function Respaldo() {
   return (
     <section className="respaldo">
-      <div className="respaldo__slider">
-        <div className="respaldo__slider-track">
-          {brands.concat(brands).map((brand, index) => (
-            <img key={index} src={brand.src} alt={brand.alt} />
-          ))}
+      <div className="respaldo__box">
+        <div className="respaldo__slider">
+          <div className="respaldo__slider-track">
+            {brands.concat(brands).map((brand, index) => (
+              <img key={index} src={brand.src} alt={brand.alt} />
+            ))}
+          </div>
         </div>
       </div>
-   
-
     </section>
-    
   );
 }

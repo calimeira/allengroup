@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <Subheader />
+      
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

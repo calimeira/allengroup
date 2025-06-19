@@ -39,12 +39,7 @@ body {
 h1, h2, h3, .respaldo__title {
   font-family: var(--font-heading);
 }
-.section-divider {
-  width: 100%;
-  height: 1px; /* Podés ajustar el grosor */
-  background-color: var(--color-dark);
 
-}
 .form {
   display: flex;
   flex-direction: column;

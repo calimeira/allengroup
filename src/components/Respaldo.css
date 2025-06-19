@@ -1,13 +1,26 @@
 .respaldo {
+  display: flex;
+  justify-content: center;
   padding: 4rem 1rem;
+  margin-top: -50px;
+}
+
+.respaldo__box {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  width: 100%;
   text-align: center;
-  background-color: #fff;
+  position: relative;
+  top: -3rem; /* “flota” sobre secciones previas */
 }
 
 .respaldo__title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
   color: var(--color-dark);
 }
 
@@ -15,7 +28,7 @@
   font-size: 1.1rem;
   color: var(--color-primary);
   max-width: 700px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2rem;
 }
 
 .respaldo__slider {
@@ -31,8 +44,8 @@
 }
 
 .respaldo__slider img {
-  height: 100px;
-  width: 200px;
+  height: 80px;
+  width: 160px;
   flex-shrink: 0;
   object-fit: contain;
   filter: grayscale(100%);
@@ -45,10 +58,18 @@
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsivo: reduce top offset y padding en móviles */
+@media (max-width: 768px) {
+  .respaldo__box {
+    top: -1.5rem;
+    padding: 1.5rem 1rem;
   }
-  100% {
-    transform: translateX(-50%);
+  .respaldo__slider img {
+    height: 60px;
+    width: 120px;
   }
 }

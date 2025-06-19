@@ -26,8 +26,7 @@ export default function Header() {
           <NavLink to="/servicios" className="header__link">Servicios</NavLink>
           <NavLink to="/respaldo" className="header__link">Respaldo</NavLink>
         </nav>
-      </header>
-      <div style={{ height: '140px' }} /> {/* espacio de compensación */}
+      </header>    
     </>
   );
 }

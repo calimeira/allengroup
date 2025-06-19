@@ -7,9 +7,8 @@ import {
   ShieldOff,
 } from 'lucide-react';
 import './Services.css';
-import servicesImg from '../assets/services.png'; // reemplaza por tu imagen real
+import servicesImg from '../assets/services.png';
 import decorativoSVG from '../assets/Layer_2.svg';
-
 
 const servicesData = [
   { icon: Activity, title: 'SCOUTING PERMANENTE', desc: 'Analizamos en forma continua diferentes alternativas en cuanto a prestaciones, alcances de cobertura, mejoras de servicios y costos entre las aseguradoras de primer nivel con las que trabajamos, con el objetivo de brindarle la mejor solución.' },
@@ -19,46 +18,33 @@ const servicesData = [
   { icon: ShieldOff, title: 'ASESORAMIENTO TÉCNICO', desc: 'Ofrecemos asesoramiento integral en Seguridad e Higiene y Medicina Laboral con el objetivo de reducir la exposición a riesgos, los costos ocultos que el ausentismo laboral genera y ofrecer todas las prestaciones relacionadas a salud ocupacional.' }
 ];
 
+
 export default function Services() {
   const sectionRef = useRef(null);
-  const [showBounce, setShowBounce] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setShowBounce(true);
+          setVisible(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      {
+        root: null,
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1,
+      }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      className="services-section"
-      style={{ position: 'relative' }}
-      ref={sectionRef}
-    >
-      {/* SVG decorativo arriba a la derecha */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 150,
-          zIndex: 2,
-          padding: '1rem'
-        }}
-      >
-        <img
-          src={decorativoSVG}
-          alt="Decorativo"
-          className={showBounce ? 'svg-bounce' : ''}
-          style={{ width: 248, height: 248 }}
-        />
+    <section className="services-section" ref={sectionRef}>
+      <div className={`decorativo-wrapper ${visible ? 'show-svg bounce-drop' : ''}`}>
+        <img src={decorativoSVG} alt="Decorativo" className="decorativo-svg" />
       </div>
       <div className="services-container">
         <div className="services-list">
@@ -74,8 +60,12 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <div className="services-image">
-          <img src={servicesImg} alt="Servicios AllenGroup" />
+        <div className="services-image-wrapper">
+          <img
+            src={servicesImg}
+            alt="Servicios"
+            className={`services-image ${visible ? 'slide-in' : ''}`}
+          />
         </div>
       </div>
     </section>
